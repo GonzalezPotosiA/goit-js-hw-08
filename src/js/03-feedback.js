@@ -4,7 +4,7 @@ const form=document.querySelector('.feedback-form');
 const inputEmail= document.querySelector('input[name=email]');
 const inputMessage= document.querySelector('[name=message]');
 
-
+console.log("helo");
 form.addEventListener('input', (event)=>{
     const data={
         email: inputEmail.value,
