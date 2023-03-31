@@ -3,14 +3,17 @@ import throttle from "lodash.throttle";
 
 const player = new Player(document.querySelector("iframe"));
 
-const funPause = function(){player.getPaused().then(function(pause){
-    if(pause){
+const funPause = function(){player.getCurrentTime().then(function(time){
+
+    console.log("time", time);
+    localStorage.setItem("videoplayer-current-time", time);
+   /* if(pause){
         console.log("pause:", pause);
         player.getCurrentTime().then(function(time){
             console.log("time", time);
             localStorage.setItem("videoplayer-current-time", time)
         })
-    }
+    }*/
 })}
 
 player.on("timeupdate", throttle(funPause, 1000));
