@@ -19,6 +19,9 @@ const funPause = function(){player.getCurrentTime().then(function(time){
 player.on("timeupdate", throttle(funPause, 1000));
 
 window.addEventListener('load',function(){
-    player.setCurrentTime(localStorage.getItem("videoplayer-current-time"));
+    if(this.localStorage.getItem("videoplayer-current-time")){
+        player.setCurrentTime(localStorage.getItem("videoplayer-current-time"));
+    }
+    
 })
 
